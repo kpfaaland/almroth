@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const imageDir = path.join(__dirname, 'images');
+const imageDir = path.join(__dirname, 'images', 'prosjekter');
 const outputFile = path.join(__dirname, 'gallery.js');
 
 const extensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
@@ -9,7 +9,8 @@ const extensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
 const images = fs.readdirSync(imageDir)
   .filter(f => extensions.includes(path.extname(f).toLowerCase()))
   .filter(f => f !== 'hero.jpg' && f !== 'logo.png')
-  .sort();
+  .sort()
+  .map(f => 'prosjekter/' + f);
 
 const content = `// AUTO-GENERATED — run: node generate-image-list.js
 const GALLERY_IMAGES = ${JSON.stringify(images, null, 2)};
