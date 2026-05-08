@@ -57,3 +57,20 @@ form.addEventListener('submit', async (e) => {
     btn.textContent = 'Send melding';
   }
 });
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], div[id="top"]');
+const navItems = document.querySelectorAll('.nav-links a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navItems.forEach(a => a.classList.remove('active'));
+      const id = entry.target.id;
+      const match = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (match) match.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => observer.observe(s));
