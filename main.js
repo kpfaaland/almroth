@@ -59,18 +59,20 @@ form.addEventListener('submit', async (e) => {
 });
 
 // Active nav link on scroll
-const sections = document.querySelectorAll('section[id], div[id="top"]');
+const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navItems.forEach(a => a.classList.remove('active'));
-      const id = entry.target.id;
-      const match = document.querySelector(`.nav-links a[href="#${id}"]`);
-      if (match) match.classList.add('active');
-    }
+function setActiveNav() {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top <= 120) current = section.id;
   });
-}, { threshold: 0.3 });
+  navItems.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}
 
-sections.forEach(s => observer.observe(s));
+window.addEventListener('scroll', setActiveNav);
+setActiveNav();
