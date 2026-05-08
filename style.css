@@ -26,8 +26,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #fff;
-  border-bottom: 1px solid var(--border);
+  background: #2F2E2E;
+  border-bottom: none;
 }
 .nav-inner {
   max-width: var(--max-w);
@@ -49,14 +49,14 @@ header {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.75);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--brown); }
+.nav-links a:hover { color: #fff(--brown); }
 .nav-toggle {
   display: none;
   flex-direction: column;
