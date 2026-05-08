@@ -64,10 +64,15 @@ const navItems = document.querySelectorAll('.nav-links a');
 
 function setActiveNav() {
   let current = '';
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top <= 120) current = section.id;
-  });
+  const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 100;
+  if (nearBottom) {
+    current = 'kontakt';
+  } else {
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top <= 120) current = section.id;
+    });
+  }
   navItems.forEach(a => {
     a.classList.remove('active');
     if (a.getAttribute('href') === '#' + current) a.classList.add('active');
