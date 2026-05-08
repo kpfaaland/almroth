@@ -38,7 +38,7 @@ header {
   gap: 2rem;
   height: 64px;
 }
-.logo { height: 44px; width: auto; display: block; }
+.logo { height: 60px; width: auto; display: block; }
 .nav-links {
   display: flex;
   gap: 0;
