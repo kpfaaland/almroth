@@ -14,6 +14,14 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+// Smooth scroll to top for Forside
+document.querySelectorAll('a[href="#top"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
 // ─── FOOTER YEAR ─────────────────────────────────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
 
