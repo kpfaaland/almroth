@@ -159,24 +159,31 @@ header {
   margin-top: 2.5rem;
 }
 .service-card {
-  background: #fff;
-  border: 1px solid var(--border);
+  position: relative;
   border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: default;
 }
-.service-card:hover {
-  box-shadow: 0 4px 20px rgba(107,76,42,0.12);
-  transform: translateY(-3px);
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
 }
-.service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.service-card:hover img { transform: scale(1.05); }
 .service-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-  color: var(--brown-dark);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
-.service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
 /* ── ABOUT ── */
 .about-text { max-width: 780px; }
