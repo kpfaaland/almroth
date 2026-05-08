@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fåland Håndverk AS – renovering og håndverk i Oslo/Akershus siden 1980" />
+  <title>Fåland Håndverk AS | Renovering og håndverk siden 1980</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="top">
+    <nav class="nav-inner">
+      <a href="#top" class="logo-link">
+        <img src="images/logo.png" alt="Fåland Håndverk AS" class="logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Åpne meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#top">Forside</a></li>
+        <li><a href="#om-oss">Om oss</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#prosjekter">Prosjekter</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Renovering og håndverk</p>
+      <h1>Siden 1980</h1>
+      <p class="hero-desc">Solid håndverk i Oslo- og Akershus-området</p>
+      <a href="#kontakt" class="btn">Ta kontakt</a>
+    </div>
+  </section>
+
+  <section id="tjenester" class="section">
+    <div class="container">
+      <h2 class="section-title">Tjenester</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔨</div>
+          <h3>Renovering</h3>
+          <p>Totalrenovering og større ombyggingsprosjekter utført med erfaring og nøyaktighet.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Oppussing</h3>
+          <p>Oppussing av alle rom – vi gir hjemmet ditt et nytt liv med solid håndverk.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3>Våtrom</h3>
+          <p>Bad og våtrom utført etter gjeldende forskrifter, med fokus på kvalitet og tetthet.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪑</div>
+          <h3>Møbler</h3>
+          <p>Spesialtilpassede møbler og innredning skreddersydd til ditt hjem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="om-oss" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Om oss</h2>
+      <div class="about-text">
+        <p>Fåland Håndverk AS er et lite selskap med et driv om å levere solide produkter, levert til riktig tid og over kundens forventninger. Vi lever og ånder av kvalitet i arbeidene våre, og vi ønsker at resultatene taler for seg selv.</p>
+        <p>Selskapets eier, Roy Fåland, begynte som håndverker i 1980 etter at han flyttet til USA som 16-åring til en familiedrevet bedrift i California. I 1983 flyttet Roy tilbake til Norge og har siden arbeidet for selskaper som Kvänum, Huseby, Norema, Lidhults, HTH og Neptune innen totalrenovering, kjøkken, bad, garderobe, tømring og møbelsnekring.</p>
+        <p>Han koordinerer ofte på tvers av arbeidsområder – eksempelvis med rørleggere og elektrikere – og har tatt med seg arbeidsviljen og kundeserviceinnstillingen fra USA.</p>
+        <blockquote>Fåland Håndverk AS planlegger jobben, og jobber som planlagt.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="prosjekter" class="section">
+    <div class="container">
+      <h2 class="section-title">Prosjektbilder</h2>
+      <p class="section-sub">Klikk på et bilde for å se det i full størrelse</p>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildegalleri">
+    <button class="lightbox-close" id="lb-close" aria-label="Lukk">&times;</button>
+    <button class="lightbox-prev" id="lb-prev" aria-label="Forrige">&#8592;</button>
+    <button class="lightbox-next" id="lb-next" aria-label="Neste">&#8594;</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lb-img" />
+    </div>
+    <p class="lightbox-counter" id="lb-counter"></p>
+  </div>
+
+  <section id="kontakt" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Kontakt oss</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:+4792021289">+47 920 21 289</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <strong>E-post</strong>
+              <a href="mailto:kontakt@fålandhåndverk.no">kontakt@fålandhåndverk.no</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Adresse</strong>
+              <span>Eventyrveien 1, 1476 Rasta</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/falandhandverk/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/falandhandverk/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form"
+              action="https://formspree.io/f/meenrqzb"
+              method="POST">
+          <div class="form-group">
+            <label for="name">Navn</label>
+            <input type="text" id="name" name="name" required placeholder="Ditt navn" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-post</label>
+            <input type="email" id="email" name="email" required placeholder="din@epost.no" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon (valgfritt)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+47 XXX XX XXX" />
+          </div>
+          <div class="form-group">
+            <label for="message">Melding</label>
+            <textarea id="message" name="message" required rows="5"
+              placeholder="Beskriv hva du trenger hjelp med..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-full">Send melding</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Fåland Håndverk AS &middot; Eventyrveien 1, 1476 Rasta</p>
+    </div>
+  </footer>
+
+  <script src="gallery.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
