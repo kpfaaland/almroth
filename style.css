@@ -371,4 +371,7 @@ blockquote {
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .lightbox-prev { left: 0.25rem; }
   .lightbox-next { right: 0.25rem; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card { aspect-ratio: 1/1; }
 }
