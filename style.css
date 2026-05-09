@@ -374,4 +374,5 @@ blockquote {
 
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .service-card { aspect-ratio: 1/1; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
