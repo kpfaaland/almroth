@@ -168,7 +168,7 @@ header {
 /* ── SERVICES ── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin-top: 2.5rem;
 }
@@ -372,5 +372,7 @@ blockquote {
   .lightbox-prev { left: 0.25rem; }
   .lightbox-next { right: 0.25rem; }
 
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card { aspect-ratio: 1/1; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
