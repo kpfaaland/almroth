@@ -520,3 +520,13 @@ blockquote {
 #gallery {
   display: block;
 }
+
+.gallery-all-wrap {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.gallery-all-wrap .btn-ghost {
+  border: 2px solid #2f5ca9;
+  color: #2f5ca9;
+  padding: 0.6rem 2rem;
+}
