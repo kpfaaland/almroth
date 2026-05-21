@@ -26,7 +26,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #2F2E2E;
+  background: #2f5ca9;
   border-bottom: none;
 }
 .nav-inner {
@@ -60,7 +60,7 @@ header {
 .nav-links a:hover { color: #fff; }
 .nav-links a.active {
   color: #fff;
-  border-bottom-color: #c9a96e;
+  border-bottom-color: #e8c06b ;
 }
 .nav-toggle {
   display: none;
@@ -132,7 +132,7 @@ header {
   border-radius: var(--radius);
   font-weight: 600;
   font-size: 0.95rem;
-  border: 2px solid #c9a96e;
+  border: 2px solid #e8c06b;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
