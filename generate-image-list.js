@@ -1,30 +1,51 @@
 const fs = require('fs');
 const path = require('path');
 
-const imageDir = path.join(__dirname, 'images', 'prosjekter');
-const outputFile = path.join(__dirname, 'gallery.js');
+const imageDir    = path.join(__dirname, 'images');
+const projectsFile = path.join(__dirname, 'projects.json');
+const extensions  = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
 
-const extensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+// Les eksisterende projects.json
+let existing = { projects: [] };
+if (fs.existsSync(projectsFile)) {
+  existing = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
+}
 
-const images = fs.readdirSync(imageDir)
-  .filter(f => extensions.includes(path.extname(f).toLowerCase()))
-  .filter(f => f !== 'hero.jpg' && f !== 'logo.png')
-  .sort()
-  .map(f => 'prosjekter/' + f);
+// Bygg opp et kart id → prosjekt for å bevare metadata
+const existingMap = {};
+existing.projects.forEach(p => { existingMap[p.id] = p; });
 
-const content = `// AUTO-GENERATED — run: node generate-image-list.js
-const GALLERY_IMAGES = ${JSON.stringify(images, null, 2)};
+// Finn alle undermapper i images/
+const folders = fs.readdirSync(imageDir).filter(f => {
+  const full = path.join(imageDir, f);
+  return fs.statSync(full).isDirectory() && !f.startsWith('.');
+});
 
-${fs.readFileSync(outputFile, 'utf8').replace(/\/\/ AUTO-GENERATED.*?(?=\/\/ ─)/s, '')}
-`;
+// Bygg oppdatert prosjektliste
+const updatedProjects = folders.map(folder => {
+  const folderPath = path.join(imageDir, folder);
+  const images = fs.readdirSync(folderPath)
+    .filter(f => extensions.includes(path.extname(f).toLowerCase()))
+    .sort();
 
-// Only rewrite the GALLERY_IMAGES array, keep the rest of gallery.js intact
-const existing = fs.readFileSync(outputFile, 'utf8');
-const updated = existing.replace(
-  /const GALLERY_IMAGES = \[[\s\S]*?\];/,
-  `const GALLERY_IMAGES = ${JSON.stringify(images, null, 2)};`
-);
+  if (existingMap[folder]) {
+    // Bevar eksisterende metadata, oppdater kun bildelisten
+    return { ...existingMap[folder], images };
+  } else {
+    // Ny mappe — legg til med plassholder-metadata
+    console.log(`  ⚠️  Ny mappe funnet: "${folder}" — husk å oppdatere navn/kategori i projects.json`);
+    return {
+      id: folder,
+      name: folder,
+      category: '',
+      location: '',
+      year: '',
+      images
+    };
+  }
+});
 
-fs.writeFileSync(outputFile, updated);
-console.log(`✅ Found ${images.length} images:`);
-images.forEach(f => console.log('  ' + f));
+fs.writeFileSync(projectsFile, JSON.stringify({ projects: updatedProjects }, null, 2));
+
+console.log(`\n✅ projects.json oppdatert med ${updatedProjects.length} prosjekter:`);
+updatedProjects.forEach(p => console.log(`   ${p.id}: ${p.images.length} bilder`));

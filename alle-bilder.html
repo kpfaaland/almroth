@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Prosjekt – Almroth Entreprenør</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Almroth Entreprenør" class="logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Åpne meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="index.html#tjenester">Tjenester</a></li>
+      <li><a href="index.html#om-oss">Om oss</a></li>
+      <li><a href="index.html#prosjekter">Prosjekter</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html#prosjekter" class="page-back">← Tilbake til prosjekter</a>
+    <h1 id="project-title">Laster...</h1>
+    <p id="project-meta"></p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="all-gallery-grid" id="project-gallery"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildegalleri">
+  <button class="lightbox-close" id="lb-close" aria-label="Lukk">&times;</button>
+  <button class="lightbox-prev" id="lb-prev" aria-label="Forrige">&#8592;</button>
+  <button class="lightbox-next" id="lb-next" aria-label="Neste">&#8594;</button>
+  <div class="lightbox-img-wrap">
+    <img src="" alt="" id="lb-img" />
+  </div>
+  <p class="lightbox-counter" id="lb-counter"></p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> &middot; Ivar Almroth Transport og Graving AS &middot; Orgnummer 941 675 417</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const projectId = params.get('id');
+
+  let allImages = [];
+  let currentIndex = 0;
+
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+
+  async function loadProject() {
+    if (!projectId) {
+      document.getElementById('project-title').textContent = 'Prosjekt ikke funnet';
+      return;
+    }
+
+    const res  = await fetch('projects.json');
+    const data = await res.json();
+    const project = data.projects.find(p => p.id === projectId);
+
+    if (!project) {
+      document.getElementById('project-title').textContent = 'Prosjekt ikke funnet';
+      return;
+    }
+
+    document.title = project.name + ' – Almroth Entreprenør';
+    document.getElementById('project-title').textContent = project.name;
+
+    const meta = [project.category, project.location, project.year].filter(Boolean).join(' · ');
+    document.getElementById('project-meta').textContent = meta;
+
+    allImages = project.images;
+    const gallery = document.getElementById('project-gallery');
+
+    allImages.forEach((img, i) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      const image = document.createElement('img');
+      image.src = `images/${project.id}/${img}`;
+      image.alt = `${project.name} – bilde ${i + 1}`;
+      image.loading = 'lazy';
+      item.appendChild(image);
+      item.addEventListener('click', () => openLightbox(i));
+      gallery.appendChild(item);
+    });
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    showImage(currentIndex);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showImage(index) {
+    const project = allImages;
+    lbImg.src = `images/${projectId}/${project[index]}`;
+    lbImg.alt = `Bilde ${index + 1}`;
+    lbCounter.textContent = (index + 1) + ' / ' + project.length;
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    showImage(currentIndex);
+  });
+  document.getElementById('lb-next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % allImages.length;
+    showImage(currentIndex);
+  });
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + allImages.length) % allImages.length; showImage(currentIndex); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % allImages.length; showImage(currentIndex); }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  loadProject();
+</script>
+</body>
+</html>

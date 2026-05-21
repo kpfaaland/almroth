@@ -1,0 +1,50 @@
+{
+  "projects": [
+    {
+      "id": "eikangerveien-13",
+      "name": "Eikangerveien 13",
+      "category": "Grunnarbeid",
+      "location": "Lørenskog",
+      "year": "2024",
+      "images": [
+        "img_10.jpg",
+        "img_11.jpg",
+        "img_12.jpg",
+        "img_15.jpg",
+        "img_16.jpg",
+        "img_17.jpg",
+        "img_18.jpg",
+        "img_9.jpg"
+      ]
+    },
+    {
+      "id": "eventyrstubben-1",
+      "name": "Eventyrstubben 1",
+      "category": "Hage & Utemiljø",
+      "location": "Oslo",
+      "year": "2025",
+      "images": [
+        "img_20.jpg",
+        "img_23.jpg",
+        "img_25.jpg",
+        "img_27.jpg",
+        "img_28.jpg",
+        "img_29.jpg"
+      ]
+    },
+    {
+      "id": "robsrudsvingen-22",
+      "name": "Robsrudsvingen 22",
+      "category": "Stein & murer",
+      "location": "Fetsund",
+      "year": "2024",
+      "images": [
+        "img_1.jpg",
+        "img_2.jpg",
+        "img_3.jpg",
+        "img_4.jpg",
+        "img_8.jpg"
+      ]
+    }
+  ]
+}
