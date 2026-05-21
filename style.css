@@ -457,7 +457,7 @@ blockquote {
 
 /* ── PROSJEKTSIDE / ALLE BILDER ───────────────────────────────────────────── */
 .page-hero {
-  background: #2f5ca9;
+  background: #D77A61;
   padding: 4rem 1.5rem 3rem;
   text-align: left;
 }
@@ -515,4 +515,8 @@ blockquote {
   .all-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+#gallery {
+  display: block;
 }
