@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <title>Prosjekt – Almroth Entreprenør</title>
+  <title>Alle bilder – Almroth Entreprenør</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,15 +30,13 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <a href="index.html#prosjekter" class="page-back">← Tilbake til prosjekter</a>
-    <h1 id="project-title">Laster...</h1>
-    <p id="project-meta"></p>
+    <h1>Alle bilder</h1>
+    <p id="total-count"></p>
   </div>
 </div>
 
 <section class="section">
-  <div class="container">
-    <div class="all-gallery-grid" id="project-gallery"></div>
-  </div>
+  <div class="container" id="all-projects-container"></div>
 </section>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildegalleri">
@@ -59,51 +57,56 @@
 
 <script src="main.js"></script>
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const projectId = params.get('id');
-
-  let allImages = [];
+  // Flat liste over alle bilder på tvers av prosjekter
+  let flatImages = []; // { src, alt }
   let currentIndex = 0;
 
   const lightbox  = document.getElementById('lightbox');
   const lbImg     = document.getElementById('lb-img');
   const lbCounter = document.getElementById('lb-counter');
 
-  async function loadProject() {
-    if (!projectId) {
-      document.getElementById('project-title').textContent = 'Prosjekt ikke funnet';
-      return;
-    }
-
+  async function loadAll() {
     const res  = await fetch('projects.json');
     const data = await res.json();
-    const project = data.projects.find(p => p.id === projectId);
+    const container = document.getElementById('all-projects-container');
 
-    if (!project) {
-      document.getElementById('project-title').textContent = 'Prosjekt ikke funnet';
-      return;
-    }
+    data.projects.filter(p => p.images && p.images.length > 0).forEach(project => {
+      // Legg til alle prosjektbilder i flattelisten og noter startindeks
+      const startIndex = flatImages.length;
+      project.images.forEach(img => {
+        flatImages.push({
+          src: `images/${project.id}/${img}`,
+          alt: `${project.name}`
+        });
+      });
 
-    document.title = project.name + ' – Almroth Entreprenør';
-    document.getElementById('project-title').textContent = project.name;
+      // Prosjektoverskrift
+      const heading = document.createElement('h3');
+      heading.style.cssText = 'font-size:1.1rem; font-weight:600; margin: 2rem 0 0.75rem; color: var(--color-text-primary, #1a1a1a);';
+      heading.textContent = project.name;
+      container.appendChild(heading);
 
-    const meta = [project.category, project.location, project.year].filter(Boolean).join(' · ');
-    document.getElementById('project-meta').textContent = meta;
+      // Bilderutenett
+      const grid = document.createElement('div');
+      grid.className = 'all-gallery-grid';
 
-    allImages = project.images;
-    const gallery = document.getElementById('project-gallery');
+      project.images.forEach((img, i) => {
+        const flatIdx = startIndex + i;
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        const image = document.createElement('img');
+        image.src = `images/${project.id}/${img}`;
+        image.alt = `${project.name} – bilde ${i + 1}`;
+        image.loading = 'lazy';
+        item.appendChild(image);
+        item.addEventListener('click', () => openLightbox(flatIdx));
+        grid.appendChild(item);
+      });
 
-    allImages.forEach((img, i) => {
-      const item = document.createElement('div');
-      item.className = 'gallery-item';
-      const image = document.createElement('img');
-      image.src = `images/${project.id}/${img}`;
-      image.alt = `${project.name} – bilde ${i + 1}`;
-      image.loading = 'lazy';
-      item.appendChild(image);
-      item.addEventListener('click', () => openLightbox(i));
-      gallery.appendChild(item);
+      container.appendChild(grid);
     });
+
+    document.getElementById('total-count').textContent = flatImages.length + ' bilder totalt';
   }
 
   function openLightbox(index) {
@@ -119,31 +122,30 @@
   }
 
   function showImage(index) {
-    const project = allImages;
-    lbImg.src = `images/${projectId}/${project[index]}`;
-    lbImg.alt = `Bilde ${index + 1}`;
-    lbCounter.textContent = (index + 1) + ' / ' + project.length;
+    lbImg.src = flatImages[index].src;
+    lbImg.alt = flatImages[index].alt;
+    lbCounter.textContent = (index + 1) + ' / ' + flatImages.length;
   }
 
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
   document.getElementById('lb-prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    currentIndex = (currentIndex - 1 + flatImages.length) % flatImages.length;
     showImage(currentIndex);
   });
   document.getElementById('lb-next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % allImages.length;
+    currentIndex = (currentIndex + 1) % flatImages.length;
     showImage(currentIndex);
   });
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + allImages.length) % allImages.length; showImage(currentIndex); }
-    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % allImages.length; showImage(currentIndex); }
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + flatImages.length) % flatImages.length; showImage(currentIndex); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % flatImages.length; showImage(currentIndex); }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
-  loadProject();
+  loadAll();
 </script>
 </body>
 </html>
