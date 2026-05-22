@@ -51,7 +51,7 @@ async function buildProjectGallery() {
   // "Vis alle bilder"-knapp
   const allWrap = document.createElement('div');
   allWrap.className = 'gallery-all-wrap';
-  allWrap.innerHTML = `<a href="alle-bilder.html" class="btn btn-ghost">Vis alle bilder</a>`;
+  allWrap.innerHTML = `<a href="alle-bilder.html" class="btn btn-ghost">Vis alle prosjekter</a>`;
   gallery.appendChild(allWrap);
 }
 
