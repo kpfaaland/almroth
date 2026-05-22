@@ -40,7 +40,7 @@ async function buildProjectGallery() {
       </div>
       <div class="project-thumbs">${thumbsHtml}${empties}</div>
       <div class="project-card-footer">
-        <span class="project-img-count">${project.images.length} bilder totalt</span>
+        <span class="project-img-count">${project.images.length} bilder</span>
         <a href="prosjekt.html?id=${project.id}" class="project-see-all">
           Se alle bilder →
         </a>
