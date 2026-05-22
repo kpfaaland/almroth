@@ -26,7 +26,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #308287;
+  background: #00A3AD; /*Tidl. #308287*/
   border-bottom: none;
 }
 .nav-inner {
