@@ -458,7 +458,7 @@ blockquote {
 /* ── PROSJEKTSIDE / ALLE BILDER ───────────────────────────────────────────── */
 .page-hero {
   background: #c9a96e;
-  padding: 4rem 1.5rem 3rem;
+  padding: 2.5rem 1.5rem 3rem;
   text-align: left;
 }
 .page-hero-inner {
@@ -469,7 +469,7 @@ blockquote {
   color: #fff;
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 700;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.1rem; /* Tidl. 0 0 0.4rem; */
 }
 .page-hero p {
   color: rgba(255,255,255,0.75);
