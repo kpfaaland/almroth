@@ -11,7 +11,9 @@ async function buildProjectGallery() {
     return;
   }
 
-  const projects = data.projects.filter(p => p.images && p.images.length > 0);
+    const allProjects = data.projects.filter(p => p.images && p.images.length > 0);
+    const limit = parseInt(gallery.dataset.limit) || allProjects.length;
+    const projects = allProjects.slice(0, limit);
 
   projects.forEach(project => {
     const preview = project.images.slice(0, 4);
@@ -48,11 +50,13 @@ async function buildProjectGallery() {
     gallery.appendChild(card);
   });
 
-  // "Vis alle bilder"-knapp
-  const allWrap = document.createElement('div');
-  allWrap.className = 'gallery-all-wrap';
-  allWrap.innerHTML = `<a href="alle-bilder.html" class="btn btn-ghost">Vis alle prosjekter</a>`;
-  gallery.appendChild(allWrap);
+  // Knapp nederst — vises kun hvis det er flere prosjekter enn vi viser
+  if (allProjects.length > limit) {
+    const allWrap = document.createElement('div');
+    allWrap.className = 'gallery-all-wrap';
+    allWrap.innerHTML = `<a href="alle-prosjekter.html" class="btn btn-ghost">Vis alle prosjekter</a>`;
+    gallery.appendChild(allWrap);
+  }
 }
 
 buildProjectGallery();

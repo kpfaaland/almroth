@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Alle prosjekter – Almroth Entreprenør</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Almroth Entreprenør" class="logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Åpne meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="index.html#tjenester">Tjenester</a></li>
+      <li><a href="index.html#om-oss">Om oss</a></li>
+      <li><a href="index.html#prosjekter">Prosjekter</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html#prosjekter" class="page-back">← Tilbake</a>
+    <h1>Alle prosjekter</h1>
+    <p>Et utvalg av jobbene vi har levert gjennom årene</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> &middot; Ivar Almroth Transport og Graving AS &middot; Orgnummer 941 675 417</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="gallery.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
