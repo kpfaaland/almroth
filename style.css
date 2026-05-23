@@ -383,7 +383,7 @@ blockquote {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  background: #fff;
+  background: #f5f1ea;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
   transition: transform 0.25s, box-shadow 0.25s;
   border-top: 3px solid #01c1cd; /* Tidl. #c9a96e; */
@@ -442,7 +442,7 @@ blockquote {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.5rem;
-  background: #fafafa;
+  background: #f5f1ea;
 }
 .project-img-count {
   font-size: 0.8rem;
