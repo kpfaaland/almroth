@@ -466,7 +466,7 @@ blockquote {
 
 /* ── PROSJEKTSIDE / ALLE BILDER ───────────────────────────────────────────── */
 .page-hero {
-  background: #01c1cd; /* Tidl. #c9a96e*/
+  background: #f9f6f2; /* Tidl. #c9a96e og #01c1cd*/
   padding: 1.5rem 1.5rem 3rem; /* Tidl. 4rem, så 2.5rem */
   text-align: left;
 }
