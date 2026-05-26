@@ -359,7 +359,7 @@ blockquote {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 64px; left: 0; right: 0;
+    top: 80px; left: 0; right: 0;
     background: #01c1cd;
     border-bottom: 1px solid var(--border);
     padding: 1rem 0;
