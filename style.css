@@ -87,7 +87,7 @@ header {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: url('images/hero.jpeg') center/cover no-repeat;
+  background: url('images/hero.png') center/cover no-repeat;
   background-attachment: fixed;
 }
 .hero-overlay {
