@@ -173,30 +173,38 @@ header {
   margin-top: 2.5rem;
 }
 .service-card {
-  position: relative;
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 3/4;
-  cursor: default;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 .service-card img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4/3;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
 }
-.service-card:hover img { transform: scale(1.05); }
-.service-card h3 {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+.service-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+.service-card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.3rem;
+}
+.service-card-body p {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* ── ABOUT ── */
