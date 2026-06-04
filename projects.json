@@ -33,6 +33,30 @@
       ]
     },
     {
+      "id": "gamleveien",
+      "name": "gamleveien",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
+      "id": "lindeveien",
+      "name": "lindeveien",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
+      "id": "rastastien",
+      "name": "rastastien",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
       "id": "robsrudsvingen-22",
       "name": "Robsrudsvingen 22",
       "category": "Stein & mur",
@@ -44,6 +68,104 @@
         "img_3.jpg",
         "img_4.jpg",
         "img_8.jpg"
+      ]
+    },
+    {
+      "id": "slastadhytte",
+      "name": "slastadhytte",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
+      "id": "tasen",
+      "name": "Tåsen",
+      "category": "Grunnarbeid, stein, mur, håndverk, hage & utemiljø",
+      "location": "Oslo",
+      "year": "2018",
+      "images": [
+        "1.jpg",
+        "10.jpg",
+        "11.jpg",
+        "12.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg",
+        "5.jpg",
+        "6.jpg",
+        "7.jpg",
+        "8.jpg",
+        "9.jpg",
+        "Bilde 01.08.2018, 16 54 20.jpg",
+        "Bilde 02.10.2018, 12 55 43.jpg",
+        "Bilde 02.10.2018, 12 55 51.jpg",
+        "Bilde 02.10.2018, 13 08 20.jpg",
+        "Bilde 02.10.2018, 13 08 24.jpg",
+        "Bilde 02.10.2018, 13 08 29.jpg",
+        "Bilde 02.10.2018, 13 08 37.jpg",
+        "Bilde 02.10.2018, 13 08 40.jpg",
+        "Bilde 02.10.2018, 13 09 07.jpg",
+        "Bilde 02.10.2018, 13 09 16.jpg",
+        "Bilde 02.10.2018, 13 09 28.jpg",
+        "Bilde 24.07.2018, 16 41 26.jpg",
+        "Bilde 24.07.2018, 16 41 33.jpg",
+        "Bilde 28.07.2018, 19 48 53.jpg",
+        "Bilde 28.07.2018, 19 51 23.jpg"
+      ]
+    },
+    {
+      "id": "tulipanveien",
+      "name": "tulipanveien",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
+      "id": "tunveien",
+      "name": "Tunveien",
+      "category": "Platting og støttemur",
+      "location": "Lørenskog",
+      "year": "2022",
+      "images": [
+        "Bilde 01.07.2022, 15 59 45.jpg",
+        "Bilde 01.07.2022, 15 59 56.jpg",
+        "Bilde 01.07.2022, 16 00 03.jpg",
+        "Bilde 01.07.2022, 16 00 24.jpg",
+        "Bilde 01.07.2022, 16 00 36.jpg",
+        "Bilde 01.07.2022, 16 00 38.jpg",
+        "Bilde 01.07.2022, 16 00 44.jpg"
+      ]
+    },
+    {
+      "id": "uteplasshytte",
+      "name": "uteplasshytte",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+    {
+      "id": "åsmoenvestrebrl",
+      "name": "åsmoenvestrebrl",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
+    },
+        {
+      "id": "xdivtrearbeider",
+      "name": "Diverse trearbeider",
+      "category": "Trearbeider, håndverk og møbler",
+      "location": "Sørum",
+      "year": "2026",
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg",
+        "5.jpg"
       ]
     }
   ]

@@ -1,0 +1,102 @@
+[33m694434e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m flyttet filer
+[33me083039[m test
+[33m15f4905[m endring av prosjekter og bilder
+[33m514f8de[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Endring av tekst til servicekort
+[33m6950257[m nope, det ble for lite
+[33m70251a0[m tester nytt favicon
+[33mab9f0b5[m endret 'om oss'-teksten noe
+[33mfe2f5a7[m Endret litt tekst
+[33mc7fb687[m ryddet opp i servicekortene
+[33mc09427e[m lagt til totalentreprenør-servicekort
+[33mff698cb[m endret hero-bilde igjen
+[33md511cd3[m endret høyde på mobilmeny
+[33m5ffea6b[m endret bakgrunn på menyen på mobil
+[33md83a557[m endret filtype på hero til .png
+[33mbfff93a[m Enkelt testdring ifbm. deployfailure
+[33m70b55fd[m Oppdatert hero-bilde med høyere oppløsning (med ai)
+[33m9d8ef31[m tilbake til lys blå hero farge
+[33m2505342[m ny hero-farge for alle-prosjekter-siden
+[33m56ce115[m testet ny farge og aksent på prosjektkortene
+[33m2b6b841[m endret bakgrunnsfarge på Prosjekt-elementene
+[33m1d0915b[m Fjernet Gaselle og Miljøfyrtårn, som bare var for moro. :D
+[33md03bdcd[m orden i kode
+[33m70bf759[m endret aksent på prosjektgalleri
+[33mdb63bc4[m oppdatert bakgrunn på favicon
+[33m28ebd34[m fargetest prosjekter
+[33md3ce5ce[m Endret farge på galleri-hero til lys blå
+[33m2c85ec8[m Lagt til hele 'organisasjonsnummer' i footeren
+[33m2a93969[m Kommentert ut teksten under 'Prosjekter'
+[33m68ae0b1[m Fjernet 'totalt' fra antall bilder i gallery
+[33mf37e1e9[m Oppfølgingsfix fra fargeendringer (kodet ut for mye..)
+[33mab5cab6[m Endret aksent på prosjektkortene til Kobelco-fargen
+[33m8808c7b[m Endret farger til et hakk lysere blå
+[33mb4be2d0[m Endret tekst
+[33m6ba60c9[m Endret tekst
+[33me45771f[m Tatt backup av alle-bilder.html og introdusert alle-prosjekter.html
+[33m08bbcff[m Endret innhold i tekst på 'Vis alle bilder'-knappen
+[33med1e588[m fjernet tvungen prosjekt-bakgrunn
+[33m204cda1[m større endringer på prosjekt-kortene
+[33mafa3fba[m sunket størrelsen på hero igjen
+[33m1fa02a6[m endret skrivefeil
+[33m7c667c0[m Endret høyden på hero-størrelse på Prosjekter og alle-bilder-siden
+[33m4103ce7[m test for å se om den kan deployes
+[33m81e8f31[m fargetest igjen - cache?
+[33m2364e27[m fargeendringstest på prosjektsiden
+[33med045a1[m Endret bakgrunnsfarge på prosjektsiden
+[33m961ea26[m Endret oppførsel for å se alle bilder under galleriet
+[33m7b5d064[m Endret prosjekt overskrift og tilhørende tekst:
+[33mce7b0d7[m Fikset alle-bilder.html
+[33m155a43f[m endret farge og #gallery display: block for å tvinge Prosjekt-galleriet under hverandre
+[33m9639d1e[m Prosjekt-basert gallerioppdatering med prosjekt.html og alle-bilder-html
+[33m6cb38b7[m økt hero-sub tekststørrelsen noe - test
+[33mbdde8f3[m lagt til dot nederst i footeren
+[33mdbb3d8b[m lagt til gazelle og miljøfyrtårn :D
+[33m1e1001e[m endret dark brown til 1F292E i footeren
+[33mea0216d[m endret nav bar color
+[33m503ee58[m endret størrelse igjen på DfB
+[33m389d34f[m endret størrelse på DfB-logoen
+[33m01373d6[m lagt til DfB-bilde
+[33ma259452[m lagt til tjeneste-bilder og endret litt tekst
+[33m8152265[m endret logo
+[33md8f4d79[m Endret tittel og gradient fra bunn til topp
+[33md6eb1a3[m Endret navngivning på tjenester
+[33m606ab61[m oppdaterte bakgrunnsbilde -> jpg til jpeg
+[33me1c0a9d[m updated favicon
+[33mb4c1cc0[m Tekst- og bildeendringer på tvers av siden
+[33m2f9bc2c[m Endret navbar til blå og oppdaterte aksentfarger
+[33m7ec143f[m Initier Almroth, og fjern Fåland CNAME
+[33m10b62ca[m Create CNAME
+[33mc1982be[m Delete CNAME
+[33m49669c9[m Create CNAME
+[33m68ee35b[m Delete CNAME
+[33m872dcbf[m Create CNAME
+[33ma35fbcf[m Changed hero layout to gradient top to bottom
+[33m3c9536a[m Changed desktop behavior for grids back to 4x1 on desktop, and 2x2 on mobile
+[33mbcf517b[m Small behavior change for galleries
+[33mff863fb[m Updated same 2x2 behavior for 'Prosjektbilder'
+[33m0496125[m Changed mobile layout for 'Tjenester'
+[33m75705b8[m Changed the grid behavior of 'Tjenester'
+[33mb81609b[m Delete CNAME
+[33md0a0281[m Create CNAME
+[33med53711[m Added an own section for the business card, so it's not that out of place at the bottom, or in conflict with the contact form
+[33m7f4b14c[m Moved business card to the bottom instead
+[33m3c6654f[m We go again with the business card..
+[33m50c9fec[m Added business card - test
+[33m11c992e[m Changed order in menu, and nav active indicator tuning
+[33m4902334[m Fix active nav indicator
+[33mbd0cfc6[m Design change. Gold accents, ghost button, active nav indicator
+[33m718f9d9[m Servuces cards with photos
+[33mf6d82a8[m Changed services card with actual photos
+[33m3fca869[m Yet another attempt at smooth scrolling - in the mobile nav section in main.js
+[33m4eecf92[m changed hero text again
+[33md364804[m Added dummy target above header to enable smooth scrolling (to that point)
+[33m306e91a[m updated top of page behavior - again!
+[33m5bfad8b[m updated the #top reference to fix 'return to beginning' behavior
+[33m6a97984[m changed hero-class text
+[33maa9101b[m added favicon to root folder
+[33m5586225[m changed header size to give room for logo
+[33mfab5159[m Increasing logo size
+[33m55bc889[m Reoganize of images into subfolders for Prosjekter, to make it easy to add/remove images for that section
+[33m2a89562[m Dark header
+[33me5c3948[m Add images and update gallery
+[33mf87de67[m Initial site
