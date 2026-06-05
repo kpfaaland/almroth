@@ -120,7 +120,35 @@
       "category": "",
       "location": "",
       "year": "",
-      "images": []
+      "images": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg",
+        "5.jpg",
+        "6.jpg",
+        "7.jpg",
+        "Bilde 05.06.2019, 16 50 33.jpg",
+        "Bilde 06.06.2019, 14 30 29.jpg",
+        "Bilde 06.06.2019, 14 30 51.jpg",
+        "Bilde 06.06.2019, 14 31 08.jpg",
+        "Bilde 08.05.2019, 13 09 19.jpg",
+        "Bilde 08.05.2019, 13 29 13.jpg",
+        "Bilde 10.05.2019, 10 10 14.jpg",
+        "Bilde 10.05.2019, 10 25 39.jpg",
+        "Bilde 11.06.2019, 10 17 15.jpg",
+        "Bilde 11.06.2019, 10 17 20.jpg",
+        "Bilde 15.05.2019, 13 38 13.jpg",
+        "Bilde 22.05.2026, 18 50 50 (1).jpg",
+        "Bilde 24.06.2019, 11 38 13.jpg",
+        "Bilde 24.06.2019, 11 38 28.jpg",
+        "Bilde 24.06.2019, 11 38 59.jpg",
+        "Bilde 24.06.2019, 11 39 25.jpg",
+        "Bilde 24.06.2019, 11 39 38.jpg",
+        "Bilde 24.06.2019, 11 39 45.jpg",
+        "Bilde 24.06.2019, 11 39 59.jpg",
+        "Bilde 24.06.2019, 11 40 23.jpg"
+      ]
     },
     {
       "id": "tunveien",
@@ -147,14 +175,6 @@
       "images": []
     },
     {
-      "id": "åsmoenvestrebrl",
-      "name": "åsmoenvestrebrl",
-      "category": "",
-      "location": "",
-      "year": "",
-      "images": []
-    },
-        {
       "id": "xdivtrearbeider",
       "name": "Diverse trearbeider",
       "category": "Trearbeider, håndverk og møbler",
@@ -167,6 +187,14 @@
         "4.jpg",
         "5.jpg"
       ]
+    },
+    {
+      "id": "åsmoenvestrebrl",
+      "name": "åsmoenvestrebrl",
+      "category": "",
+      "location": "",
+      "year": "",
+      "images": []
     }
   ]
 }
