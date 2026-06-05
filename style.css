@@ -394,7 +394,7 @@ blockquote {
   background: #f9f6f2;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
   transition: transform 0.25s, box-shadow 0.25s;
-  border-top: 1px solid #01c1cd; /* Tidl. #c9a96e; og 3x*/
+  border-top: 1px solid #e8c06b; /* Tidl. #c9a96e; og 3x*/
 }
 .project-card:hover {
   transform: translateY(-3px);
