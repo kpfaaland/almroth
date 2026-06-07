@@ -1,3 +1,61 @@
+// ─── LIGHTBOX (used on index.html for project thumbnail previews) ─────────────
+
+const lightbox   = document.getElementById('lightbox');
+const lbImg      = document.getElementById('lb-img');
+const lbCounter  = document.getElementById('lb-counter');
+
+let lbImages  = [];   // all image paths for the active project
+let lbIndex   = 0;    // currently shown image
+
+function openLightbox(images, startIndex) {
+  lbImages = images;
+  lbIndex  = startIndex;
+  showLbImage();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showLbImage() {
+  lbImg.src = lbImages[lbIndex];
+  lbImg.alt = `Bilde ${lbIndex + 1} av ${lbImages.length}`;
+  if (lbCounter) lbCounter.textContent = `${lbIndex + 1} / ${lbImages.length}`;
+}
+
+function lbPrev() {
+  lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+  showLbImage();
+}
+
+function lbNext() {
+  lbIndex = (lbIndex + 1) % lbImages.length;
+  showLbImage();
+}
+
+if (lightbox) {
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', lbPrev);
+  document.getElementById('lb-next').addEventListener('click', lbNext);
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  lbPrev();
+    if (e.key === 'ArrowRight') lbNext();
+  });
+}
+
+
+// ─── PROJECT GALLERY BUILDER ──────────────────────────────────────────────────
+
 async function buildProjectGallery() {
   const gallery = document.getElementById('gallery');
   if (!gallery) return;
@@ -11,25 +69,27 @@ async function buildProjectGallery() {
     return;
   }
 
-    const allProjects = data.projects.filter(p => p.images && p.images.length > 0);
-    const limit = parseInt(gallery.dataset.limit) || allProjects.length;
-    const projects = allProjects.slice(0, limit);
+  const allProjects = data.projects.filter(p => p.images && p.images.length > 0);
+  const limit       = parseInt(gallery.dataset.limit) || allProjects.length;
+  const projects    = allProjects.slice(0, limit);
 
   projects.forEach(project => {
-    const preview = project.images.slice(0, 4);
-    const meta = [project.category, project.location, project.year].filter(Boolean).join(' · ');
+    const preview   = project.images.slice(0, 4);
+    const allPaths  = project.images.map(img => `images/${project.id}/${img}`);
+    const meta      = [project.category, project.location, project.year].filter(Boolean).join(' · ');
 
     const card = document.createElement('a');
     card.className = 'project-card';
     card.href = `prosjekt.html?id=${project.id}`;
 
-    const thumbsHtml = preview.map(img => `
-      <a href="prosjekt.html?id=${project.id}" class="project-thumb">
+    // Thumbnails — clicking opens lightbox instead of navigating
+    const thumbsHtml = preview.map((img, i) => `
+      <div class="project-thumb" data-index="${i}">
         <img src="images/${project.id}/${img}" alt="${project.name}" loading="lazy" />
-      </a>
+      </div>
     `).join('');
 
-    // Fyll opp til 4 tomme hvis færre bilder
+    // Fill up to 4 empty slots if fewer images
     const empties = Array(Math.max(0, 4 - preview.length))
       .fill('<div class="project-thumb project-thumb-empty"></div>')
       .join('');
@@ -48,10 +108,19 @@ async function buildProjectGallery() {
       </div>
     `;
 
+    // Wire up thumbnail clicks to open lightbox
+    card.querySelectorAll('.project-thumb[data-index]').forEach(thumb => {
+      thumb.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(allPaths, parseInt(thumb.dataset.index));
+      });
+    });
+
     gallery.appendChild(card);
   });
 
-  // Knapp nederst — vises kun hvis det er flere prosjekter enn vi viser
+  // "Show all projects" button — only if more projects than the limit
   if (allProjects.length > limit) {
     const allWrap = document.createElement('div');
     allWrap.className = 'gallery-all-wrap';
