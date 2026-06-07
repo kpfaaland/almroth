@@ -388,6 +388,9 @@ blockquote {
 
 /* ── PROSJEKTKORT ─────────────────────────────────────────────────────────── */
 .project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border: none;
   border-radius: 12px;
   overflow: hidden;

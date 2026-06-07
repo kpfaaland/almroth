@@ -19,8 +19,9 @@ async function buildProjectGallery() {
     const preview = project.images.slice(0, 4);
     const meta = [project.category, project.location, project.year].filter(Boolean).join(' · ');
 
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'project-card';
+    card.href = `prosjekt.html?id=${project.id}`;
 
     const thumbsHtml = preview.map(img => `
       <a href="prosjekt.html?id=${project.id}" class="project-thumb">
