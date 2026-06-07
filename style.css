@@ -478,8 +478,9 @@ blockquote {
 
 /* ── PROSJEKTSIDE / ALLE BILDER ───────────────────────────────────────────── */
 .page-hero {
-  background: #01c1cd; /* Tidl. #c9a96e og #01c1cd*/
-  padding: 1.5rem 1.5rem 3rem; /* Tidl. 4rem, så 2.5rem */
+  background: #f9f6f2;
+  border-bottom: 3px solid #e5c784;
+  padding: 1.5rem 1.5rem 3rem;
   text-align: left;
 }
 .page-hero-inner {
@@ -487,13 +488,13 @@ blockquote {
   margin: 0 auto;
 }
 .page-hero h1 {
-  color: #fff;
+  color: #1F292E;
   font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 700;
-  margin: 0 0 0.1rem; /* Tidl. 0 0 0.4rem; */
+  margin: 0 0 0.1rem;
 }
 .page-hero p {
-  color: rgba(255,255,255,0.75);
+  color: #666;
   font-size: 1rem;
   margin: 0;
 }
@@ -502,7 +503,7 @@ blockquote {
   align-items: center;
   gap: 6px;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
+  color: #00A3AD;
   text-decoration: none;
   margin-bottom: 1rem;
 }
