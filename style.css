@@ -1,6 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  --teal: #00A3AD;
+  --gold: #c9a96e;
   --brown: #6b4c2a;
   --brown-dark: #1F292E;
   --brown-light: #f5efe8;
@@ -76,7 +78,7 @@ header {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--text);
+  background: #fff;
   border-radius: 2px;
   transition: all 0.3s;
 }
@@ -458,7 +460,7 @@ blockquote {
 .project-see-all {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #2f5ca9;
+  color: #00A3AD;
   text-decoration: none;
 }
 .project-see-all:hover {
@@ -542,7 +544,7 @@ blockquote {
   text-align: center;
 }
 .gallery-all-wrap .btn-ghost {
-  border: 2px solid #2f5ca8;
-  color: #2f5ca8;
+  border: 2px solid #00A3AD;
+  color: #00A3AD;
   padding: 0.6rem 2rem;
 }
