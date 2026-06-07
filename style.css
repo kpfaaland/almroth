@@ -14,7 +14,10 @@
   --max-w: 1100px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll; /* always reserve scrollbar width — prevents layout shift between pages */
+}
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
