@@ -76,7 +76,9 @@ async function buildProjectGallery() {
   projects.forEach(project => {
     const preview   = project.images.slice(0, 4);
     const allPaths  = project.images.map(img => `images/${project.id}/${img}`);
-    const meta      = [project.category, project.location, project.year].filter(Boolean).join(' · ');
+    // Year hidden for now — restore project.year to show it again
+    // const meta      = [project.category, project.location, project.year].filter(Boolean).join(' · ');
+    const meta      = [project.category, project.location].filter(Boolean).join(' · ');
 
     const card = document.createElement('a');
     card.className = 'project-card';

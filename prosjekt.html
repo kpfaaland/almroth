@@ -87,7 +87,9 @@
     document.title = project.name + ' – Almroth Entreprenør';
     document.getElementById('project-title').textContent = project.name;
 
-    const metaParts = [project.category, [project.location, project.year].filter(Boolean).join(' · ')].filter(Boolean);
+    // Year hidden for now — restore project.year to show it again
+    // const metaParts = [project.category, [project.location, project.year].filter(Boolean).join(' · ')].filter(Boolean);
+    const metaParts = [project.category, project.location].filter(Boolean);
     document.getElementById('project-meta').innerHTML = metaParts.join('<br>');
 
     allImages = project.images;
